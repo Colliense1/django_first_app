@@ -1,28 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+{% block content %}
+<h2>This is Order page</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum id quidem quis ducimus, mollitia dicta. Labore
+    suscipit nulla consequuntur iste blanditiis, corrupti, mollitia qui nesciunt, doloribus perferendis vel delectus
+    fuga!</p>
+{% endblock %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css" />
-</head>
-
-<body>
-    <h1>All Orders</h1>
-
-    <nav>
-        <menu>
-            <li><a href="/app/home/">Home</a></li>
-            <li class=""><a href="/app/about/">About</a></li>
-            <li class=""><a href="/app/contact/">Contact</a></li>
-            <li class=""><a href="/order/allorders/">Order</a></li>
-        </menu>
-    </nav>
-    <h2>This is Order page</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum id quidem quis ducimus, mollitia dicta. Labore
-        suscipit nulla consequuntur iste blanditiis, corrupti, mollitia qui nesciunt, doloribus perferendis vel delectus
-        fuga!</p>
-</body>
-
-</html>
+{% block title %}
+Order
+{% endblock %}

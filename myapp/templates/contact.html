@@ -1,28 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+{% block content %}
+<h2>Contact Us</h2>
+<h3> {{ emailaddress }} </h3>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css" />
-</head>
+{% load static %}
+<p>
+    <img width="300" src="{% static 'images/img-02.jpg' %}">
+</p>
 
-<body>
-    <h1>Contact Page</h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum id quidem quis ducimus, mollitia dicta. Labore
+    suscipit nulla consequuntur iste blanditiis, corrupti, mollitia qui nesciunt, doloribus perferendis vel delectus
+    fuga!
+</p>
+<p>
+    <!-- {{ socialprofiles }} -->
+    {% for profile in socialprofiles %}
+    <li>
+        {{ profile | lower }}
+        <!-- template filter -->
+    </li>
+    {% endfor %}
+</p>
+<p>
+    Our headquater is in
+    {% if hq == "d" %}
+    <strong>Dhaka</strong>
+    {% elif hq == "k" %}
+    <strong>Khulna</strong>
+    {% elif hq == "b" %}
+    <strong>Barishal</strong>
+    {% else %}
+    <strong>Area 51</strong>
+    {% endif %}
+</p>
+{% endblock %}
 
-    <nav>
-        <menu>
-            <li><a href="/app/home/">Home</a></li>
-            <li class=""><a href="/app/about/">About</a></li>
-            <li class=""><a href="/app/contact/">Contact</a></li>
-            <li class=""><a href="/order/allorders/">Order</a></li>
-        </menu>
-    </nav>
-    <h2>Contact Us</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum id quidem quis ducimus, mollitia dicta. Labore
-        suscipit nulla consequuntur iste blanditiis, corrupti, mollitia qui nesciunt, doloribus perferendis vel delectus
-        fuga!</p>
-</body>
-
-</html>
+{% block title %}
+Contact Us
+{% endblock %}
