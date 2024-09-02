@@ -6,7 +6,12 @@
 
 <form method="post">
     {% csrf_token %}
-    {{ formx.as_p }}
+    <!--{{ formx.as_p }}-->
+    {% for field in formx %}
+    <div>
+        {{ field.label }} {{ field }}
+    </div>
+    {% endfor %}
 
     <p>
         <button type="submit">Save Data</button>
